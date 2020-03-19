@@ -13,7 +13,8 @@ import DeckCreateNew from '../Deck/DeckCreateNew'
 import Deck from '../Cards/Deck'
 import EditDeck from '../Deck/DeckEdit'
 import DeckDeleteModal from '../Deck/DeckDeleteModal'
-import ShowCards from '../Cards/CardShow'
+// import ShowCards from '../Cards/CardShow'
+import Flashcard from '../Cards/Flashcard'
 import AddCard from '../Cards/CardCreate'
 import EditCard from '../Cards/CardEdit'
 import CardDeleteModal from '../Cards/CardDeleteModal'
@@ -79,7 +80,7 @@ class App extends Component {
               <DeckDeleteModal msgAlert={this.msgAlert} user={user} />
               )} />
             <AuthenticatedRoute user={user} exact path='/decks/:id/cards' render={(props) => (
-              <ShowCards msgAlert={this.msgAlert} user={user} />
+              <Flashcard msgAlert={this.msgAlert} user={user} />
             )} />
             <AuthenticatedRoute user={user} exact path='/decks/:id/create-card' render={(props) => (
               <AddCard msgAlert={this.msgAlert} user={user} />

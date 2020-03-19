@@ -50,7 +50,7 @@ class EditCard extends Component {
       message: messages.cardEditSuccess,
       variant: 'success'
     }))
-    .then(() => history.push('/welcome'))
+    .then(() => history.push(`/decks/${this.props.location.state.deck}/cards`))
     .catch(error => {
       msgAlert({
         heading: 'Update failed with error: ' + error.message,
@@ -64,7 +64,8 @@ class EditCard extends Component {
 
   onDeleteCard = event => {
     event.preventDefault()
-    const { msgAlert, user, history } = this.props
+    const { msgAlert, user, history} = this.props
+    console.log(this.props)
     destroyCard( this.state.cardId, user)
       .then(() => {
         msgAlert({
@@ -74,7 +75,7 @@ class EditCard extends Component {
         })
       })
       .then(this.onHideModalCardDelete)
-      .then(() => setTimeout((history.push('/welcome'))), 2000)
+      .then(() => setTimeout((history.push(`/decks/${this.props.location.state.deck}/cards`)), 2000))
       .then(this.onHideModalCardDelete)
         .catch(error => {
           console.error(error)

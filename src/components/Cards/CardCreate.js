@@ -49,7 +49,6 @@ addCard = event => {
 }
 
 componentDidMount() {
-  console.log(this.props)
   this.setState({
     deck: this.props.match.params.id
   })

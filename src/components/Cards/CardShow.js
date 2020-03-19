@@ -11,6 +11,7 @@ class ShowCards extends Component {
 
     this.state = {
       deckId: this.props.match.params.id,
+      deckName: '',
       cards: [ ],
       error: null
     }
@@ -37,8 +38,6 @@ class ShowCards extends Component {
     .then(() => history.push('/welcome'))
     .catch(error => {
       console.error(error)
-      console.log(this.state)
-      console.log(this.props)
       msgAlert({
         heading: 'Failed to create a new card',
         message: messages.cardCreateFailure,
@@ -49,10 +48,16 @@ class ShowCards extends Component {
 
   componentDidMount() {
     this.displayCards()
+    if (this.props.location.state.deckName) {
+      this.setState({ deckName: this.props.location.state.deckName})
+    } else {
+    this.setState({ deckName: this.state.cards.deck})
+    }
+    setTimeout(() => console.log(this.state), 2000)
   }
 
   render() {
-    const { cards, deckId, error } = this.state
+    const { cards, deckId, deckName, error } = this.state
 
     const cardList = cards.length ?
       cards.map(card => {
@@ -84,7 +89,7 @@ class ShowCards extends Component {
 
     return (
       <div className='container welcome'>
-        <h1 className='cardHeading'>Cards</h1>
+        <h1 className='cardHeading'>{deckName}</h1>
         { cardList }
 
         <div>

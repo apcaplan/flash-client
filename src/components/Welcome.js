@@ -37,8 +37,12 @@ class Welcome extends Component {
               <Col md='4' className='deck-name'>
                 <Link to={{
                   pathname: `/decks/${deck._id}/cards`,
-                  state: { deckId: deck._id }
+                  state: {
+                    deckId: deck._id,
+                    deckName: deck.deckName
+                  }
                 }}
+                onClick={ localStorage.setItem('deckName', deck.deckName) }
                   >
                   <h2>{deck.deckName}</h2>
                 </Link>
