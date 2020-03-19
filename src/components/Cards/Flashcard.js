@@ -96,6 +96,7 @@ class Flashcard extends Component {
     return (
       <div className='container welcome'>
         <h1 className='cardHeading'>{deckName}</h1>
+        <h5 className='cardCount'>Card {count + 1}/{cards.length}</h5>
 
         <div className='flashcard'>
           <Button
@@ -105,15 +106,21 @@ class Flashcard extends Component {
             <FontAwesomeIcon icon='chevron-circle-left' />
           </Button>
           <div className='card'>
-            <div className='flashcard_front'>
-              <span>
-                {cards[count].cardFront}
-              </span>
-            </div>
-            <div className='flashcard_back'>
-              <span>
-                {cards[count].cardBack}
-              </span>
+            <div className='card-inner'>
+              <div className='flashcard_front'>
+                <div className= 'text'>
+                  <span>
+                    {cards[count].cardFront}
+                  </span>
+                </div>
+              </div>
+              <div className='flashcard_back'>
+                <div className= 'text'>
+                  <span>
+                    {cards[count].cardBack}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <Button
@@ -124,22 +131,32 @@ class Flashcard extends Component {
           </Button>
         </div>
 
-        <div>
-          <Link to={{
-            pathname: `/cards/${cards[count]._id}/edit-card`,
-            state: { deck: deckId }
-          }}
-          >
-            <FontAwesomeIcon icon='pencil-alt' />
-          </Link>
-        </div>
+        <div className='footer-bar'>
+          <div>
+            <Link className='add-card' to={`/decks/${deckId}/create-card`}>
+              <FontAwesomeIcon icon='plus-circle' />
+              <p>Add Card</p>
+            </Link>
+          </div>
 
-        <div>
-          <Link to={`/decks/${deckId}/create-card`}>
-            <FontAwesomeIcon icon='plus-circle' />
-          </Link>
-        </div>
+          <div>
+            <Link className='edit-card' to={{
+              pathname: `/cards/${cards[count]._id}/edit-card`,
+              state: { deck: deckId }
+            }}
+            >
+              <FontAwesomeIcon icon='pencil-alt' />
+              <p>Edit Card</p>
+            </Link>
+          </div>
 
+          <div>
+            <Link className='go-home' to={ '/welcome' } >
+              <FontAwesomeIcon icon='home' />
+              <p>Go Home</p>
+            </Link>
+          </div>
+        </div>
       </div>
     )
   }

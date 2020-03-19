@@ -33,8 +33,8 @@ class Welcome extends Component {
       decks.map(deck => {
         return (
           <Container className='deck-container' key={deck._id}>
-            <Row className=''>
-              <Col md='4' className='deck-name'>
+            <Row className='deck-item'>
+              <Col className='deck-name'>
                 <Link to={{
                   pathname: `/decks/${deck._id}/cards`,
                   state: {
@@ -47,8 +47,8 @@ class Welcome extends Component {
                   <h2>{deck.deckName}</h2>
                 </Link>
               </Col>
-              <Col md='1'>
-                <Link to={`/decks/${deck._id}/edit-deck`}>
+              <Col>
+                <Link className='deck-edit' to={`/decks/${deck._id}/edit-deck`}>
                   <FontAwesomeIcon icon='pencil-alt' />
                 </Link>
               </Col>
