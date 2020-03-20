@@ -33,7 +33,7 @@ class CardDeleteModal extends Component {
               Cancel
               </Button>
               <Button
-                className='delete-button'
+                className='button-delete'
                 variant='danger'
                 type='button'
                 onClick={destroyCard}

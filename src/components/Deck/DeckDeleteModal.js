@@ -10,42 +10,42 @@ class DeckDeleteModal extends Component {
     const { onHide, deleteDeck} = this.props
 
     return (
-          <Modal
-            {...this.props}
-            size='md'
-            area-labelledby='contained-modal-title-vcenter'
-            centered
-            onHide={onHide}
+      <Modal
+        {...this.props}
+        size='md'
+        area-labelledby='contained-modal-title-vcenter'
+        centered
+        onHide={onHide}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id='contained-modal-title-vcenter'>
+          Are you sure?
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <strong>Deleting a deck will delete all of its cards. This action is irreversible.</strong>{" "}
+          Are you certain you want to delete?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+          className='delete-button'
+          variant='warning'
+          type='button'
+          onClick={onHide}
           >
-            <Modal.Header closeButton>
-              <Modal.Title id='contained-modal-title-vcenter'>
-              Are you sure?
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <strong>Deleting a deck will delete all of its cards. This action is irreversible.</strong>{" "}
-              Are you certain you want to delete?
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-              className='delete-button'
-              variant='warning'
-              type='button'
-              onClick={onHide}
-              >
-              Cancel
-              </Button>
-              <Button
-                className='delete-button'
-                variant='danger'
-                type='button'
-                onClick={deleteDeck}
-              >
-              Delete
-              </Button>
-            </Modal.Footer>
-          </Modal>
-  )
+          Cancel
+          </Button>
+          <Button
+            className='button-delete'
+            variant='danger'
+            type='button'
+            onClick={deleteDeck}
+          >
+          Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    )
   }
 }
 

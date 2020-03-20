@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import './decks.css'
 import { withRouter } from 'react-router-dom'
 import { getDeck, editDeck, destroyDeck } from '../../api/decks'
 import messages from './../Auth/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import DeckDeleteModal from './DeckDeleteModal'
+import backHomeIcon from './DeckCancelIcon'
 
 class EditDeck extends Component {
   constructor () {
@@ -56,7 +58,6 @@ class EditDeck extends Component {
         variant: 'failed'
       })
       console.error(error)
-      // this.setState({ newDeckName: ''})
     })
   }
 
@@ -98,14 +99,16 @@ render () {
   const { oldDeckName } = this.state
 
   return(
-    <div>
-      <div className='editDeck-form row'>
+    <div className='wrapper'>
+      { backHomeIcon() }
+      <div className='deck-form row'>
         <div className='form-wrapper2'>
           <h3>Edit Deck</h3>
           <Form>
             <Form.Group controlId='newDeckName'>
               <Form.Label>Change deck name from {oldDeckName}:</Form.Label>
               <Form.Control
+                className='deck-new'
                 // required
                 name='newDeckName'
                 // defaultValue={oldDeckName}
@@ -115,22 +118,24 @@ render () {
               />
               </Form.Group>
           </Form>
-              <Button
-                className='button-savechanges'
-                variant='primary'
-                type='submit'
-                onClick={this.onEditDeck}
-              >
-                Save Changes
-              </Button>
-              <Button
-                className='delete-button'
-                variant='danger'
-                type='button'
-                onClick={this.onShowModalDeckDelete}
-              >
-                Delete Deck
-              </Button>
+          <div className='buttons'>
+            <Button
+              className='button-edit2'
+              variant='primary'
+              type='submit'
+              onClick={this.onEditDeck}
+            >
+              Save Changes
+            </Button>
+            <Button
+              className='button-edit2 button-delete'
+              variant='danger'
+              type='button'
+              onClick={this.onShowModalDeckDelete}
+            >
+              Delete Deck
+            </Button>
+          </div>
         </div>
       </div>
 

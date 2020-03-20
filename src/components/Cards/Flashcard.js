@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { showCards, createCard } from '../../api/decks'
+import './cards.css'
+import { showCards, getDeck, createCard } from '../../api/decks'
 import messages from '../Auth/AutoDismissAlert/messages'
 import { Button } from 'react-bootstrap'
 import { Link, withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import backHomeIcon from '../Deck/DeckCancelIcon'
 
 class Flashcard extends Component {
   constructor (props) {
@@ -40,7 +42,13 @@ class Flashcard extends Component {
       showCards(this.state.deckId, this.props.user)
       .then(res => this.setState({ cards: res.data.cards }))
       .catch(err => this.setState({ error: err.stack }))
-      }
+    }
+
+    fetchDeckName = () => {
+      getDeck(this.state.deckId, this.props.user)
+      .then (res => this.setState({ deckName: res.data.deck.deckName }))
+      .catch(err => this.setState({ error: err.stack }))
+    }
 
     onCreateCard = event => {
       event.preventDefault()
@@ -55,10 +63,8 @@ class Flashcard extends Component {
         })
       })
       .then(this.setState({ deckName: this.state.cards.deck }))
-      .then(console.log(this.state))
       .then(() => history.push(`/decks/${data.card.deck}/cards`))
       .catch(error => {
-        console.error(error)
         msgAlert({
           heading: 'Failed to create a new card',
           message: messages.cardCreateFailure,
@@ -69,8 +75,9 @@ class Flashcard extends Component {
 
     componentDidMount() {
       this.displayCards()
-      const deckName = localStorage.getItem('deckName')
-      this.setState({ deckName })
+      this.fetchDeckName()
+      // const deckName = localStorage.getItem('deckName')
+      // this.setState({ deckName })
     }
 
   render() {
@@ -82,11 +89,12 @@ class Flashcard extends Component {
 
     if (cards.length === 0) {
       return (
-        <div>
+        <div className='onNoCard'>
+          { backHomeIcon() }
           <div className='center'>Click add button below to create a card!</div>
           <div>
-            <Link to={`/decks/${deckId}/create-card`}>
-              <FontAwesomeIcon icon='plus-circle' />
+            <Link className='first-card' to={`/decks/${deckId}/create-card`}>
+              <FontAwesomeIcon icon='plus-circle' size='2x' />
             </Link>
           </div>
         </div>

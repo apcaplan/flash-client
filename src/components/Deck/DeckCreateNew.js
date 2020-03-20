@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import './decks.css'
 import { withRouter } from 'react-router-dom'
 import { createDeck } from '../../api/decks'
 import messages from '../Auth/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import backHomeIcon from './DeckCancelIcon'
 
 class CreateDeck extends Component {
   constructor () {
@@ -51,29 +53,33 @@ render () {
   const { newDeckName } = this.state
 
   return(
-    <div>
-      <div className='editDeck-form row'>
+    <div className='wrapper welcome'>
+      { backHomeIcon() }
+      <div className='deck-form row'>
         <div className='form-wrapper2'>
           <h3>Create New Deck</h3>
           <Form onSubmit={this.onCreateDeck}>
             <Form.Group controlId='deckName'>
-              <Form.Label>Deck Name:</Form.Label>
+            {/*  <Form.Label>Deck Name:</Form.Label> */}
               <Form.Control
+                className='deck-input'
                 required
                 name='deckName'
                 value={newDeckName}
                 type='text'
-                placeholder='Enter deck name'
+                placeholder='Enter new deck name'
                 onChange={this.handleChange}
               />
               </Form.Group>
               <Button
-                className='button-auth2'
+                className='button-edit'
                 variant='primary'
                 type='submit'
               >
                 Add Deck
               </Button>
+
+        {/*
               <Button
                 className='cancel-button'
                 variant='secondary'
@@ -82,6 +88,8 @@ render () {
               >
                 Cancel
               </Button>
+            */}
+
           </Form>
         </div>
       </div>

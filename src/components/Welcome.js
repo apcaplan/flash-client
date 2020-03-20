@@ -63,10 +63,24 @@ class Welcome extends Component {
       return <p className='deckless'>ERROR: { error } </p>
     }
 
+    const heading = () => {
+      if (this.state.decks.length === 1) {
+        return (<h1 className='deckHeading'>Your Flashcard Deck</h1> )
+      } else {
+        return (<h1 className='deckHeading'>Your Flashcard Decks</h1> )
+      }
+    }
+
     return (
       <div className='container welcome'>
-        <h1 className='deckHeading'>Your Decks</h1>
+        { heading() }
         { deckList }
+        <div>
+          <Link className='add-deck' to='/create-deck'>
+            <FontAwesomeIcon icon='plus-circle' size='2x' />
+            <p>Create Deck</p>
+          </Link>
+        </div>
       </div>
     )
   }

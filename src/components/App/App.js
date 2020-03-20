@@ -10,7 +10,6 @@ import SignOut from '../Auth/SignOut'
 import ChangePassword from '../Auth/ChangePassword'
 import Welcome from '../Welcome'
 import DeckCreateNew from '../Deck/DeckCreateNew'
-import Deck from '../Cards/Deck'
 import EditDeck from '../Deck/DeckEdit'
 import DeckDeleteModal from '../Deck/DeckDeleteModal'
 // import ShowCards from '../Cards/CardShow'
@@ -69,9 +68,6 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/create-deck' render={() => (
             <DeckCreateNew msgAlert={this.msgAlert} user={user} />
-            )} />
-          <AuthenticatedRoute user={user} exact path='/decks/:id' render={(props) => (
-            <Deck msgAlert={this.msgAlert} user={user} />
             )} />
           <AuthenticatedRoute user={user} exact path='/decks/:id/edit-deck' render={(props) => (
             <EditDeck msgAlert={this.msgAlert} user={user} />

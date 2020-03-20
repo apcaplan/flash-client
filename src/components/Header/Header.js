@@ -6,8 +6,6 @@ const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="#create-deck">Add Deck</Nav.Link>
-    <Nav.Link href="#welcome">Home</Nav.Link>
   </Fragment>
 )
 
@@ -25,7 +23,7 @@ const unauthenticatedOptions = (
 // )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar className="navigation" variant="dark" expand="md">
     <Navbar.Brand href="#">
       Flash!
     </Navbar.Brand>

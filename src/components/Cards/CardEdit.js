@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { getCard, editCard, destroyCard } from '../../api/decks'
 import messages from './../Auth/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import CardDeleteModal from './CardDeleteModal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EditCard extends Component {
   constructor () {
@@ -57,15 +58,12 @@ class EditCard extends Component {
         message: messages.cardEditFailure,
         variant: 'failed'
       })
-      console.error(error)
-      // this.setState({ newCardName: ''})
     })
   }
 
   onDeleteCard = event => {
     event.preventDefault()
     const { msgAlert, user, history} = this.props
-    console.log(this.props)
     destroyCard( this.state.cardId, user)
       .then(() => {
         msgAlert({
@@ -78,7 +76,6 @@ class EditCard extends Component {
       .then(() => setTimeout((history.push(`/decks/${this.props.location.state.deck}/cards`)), 2000))
       .then(this.onHideModalCardDelete)
         .catch(error => {
-          console.error(error)
           msgAlert({
             heading: 'Delete failed with error: ' + error.message,
             message: messages.cardDeleteFailure,
@@ -102,17 +99,23 @@ render () {
   const { oldCardFront, oldCardBack  } = this.state
 
   return(
-    <div>
-      <div className='editCard-form row'>
-        <div className='form-wrapper2'>
+    <div className='wrapper'>
+        <div className='backHomeIcon'>
+          <Link to={ `/decks/${this.props.location.state.deck}/cards` }>
+            <FontAwesomeIcon className='go-back' icon='times-circle' size='2x' />
+          </Link>
+        </div>
+        <div className='card-form row'>
+          <div className='form-wrapper3'>
           <h3>Edit Card</h3>
           <Form>
-            <Form.Group controlId='newCardFront'>
+            <Form.Group className='card-edit' controlId='newCardFront'>
               <Form.Label>Term / Front of card</Form.Label>
               <Form.Control
                 required
                 as='textarea'
                 rows='2'
+                cols='80'
                 name='newCardFront'
                 defaultValue={oldCardFront}
                 type='text'
@@ -120,12 +123,13 @@ render () {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Form.Group controlId='newCardBack'>
+            <Form.Group   className='card-edit' controlId='newCardBack'>
               <Form.Label>Definition / Back of card</Form.Label>
               <Form.Control
                 required
                 as='textarea'
                 rows='2'
+                cols='80'
                 name='newCardBack'
                 defaultValue={oldCardBack}
                 type='text'
@@ -135,19 +139,21 @@ render () {
               </Form.Group>
           </Form>
               <Button
-                className='button-savechanges'
+                className='button-edit3'
                 variant='primary'
                 type='submit'
                 onClick={this.onEditCard}
               >
+                {/* <FontAwesomeIcon icon='save' /> */}
                 Save Changes
               </Button>
               <Button
-                className='delete-button'
+                className='button-delete'
                 variant='danger'
                 type='button'
                 onClick={this.onShowModalCardDelete}
               >
+                {/* <FontAwesomeIcon icon='trash' /> */}
                 Delete Card
               </Button>
         </div>

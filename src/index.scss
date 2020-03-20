@@ -1,74 +1,63 @@
 @import '~bootstrap/scss/bootstrap';
 
+a {
+  // color: #DB755C;
+}
+
+body {
+  background-color: #057191;
+  color: #33363b;
+  height: 100%;
+}
+
+main {
+  background-color: #f5f5f5;
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+  color: #33363b;
+  height: 90%;
+  margin: 0 auto;
+  margin-bottom: 2.5em;
+  max-width: 1600px;
+  width: 95%;
+   // overflow: scroll;
+}
+
 a:hover {
   text-decoration: none;
 }
 
-.card {
+.add-deck {
+  margin-top: 6rem;
+  color: #DB755C;
+}
+
+.add-deck:hover {
+  color: #057191;
+}
+
+.add-deck p {
+  font-size: 1.4rem;
+}
+
+.add-deck, .add-card, .edit-card, .go-home {
+  align-items: center;
   display: flex;
-  margin: 1em 2em;
-  position: relative;
-  // position: absolute;
-  width: 500px;
-  height: 300px;
-  perspective: 300rem;
-  -moz-perspective: 300rem;
+  flex-direction: column;
 }
 
-.card-inner {
-  // transition: all 1s ease-in-out;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // height: 100%;
-  // width: 100%;
-  // backface-visibility: hidden;
-  border-radius: 1rem;
+// .btn:active, .btn:active:focus {
+//   outline: none;
+//   box-shadow: none;
+// }
 
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
-  transition: transform 1s;
-  transform-style: preserve-3d;
+.btn {
+  background-color: #DB755C;
+  border-color: #DB755C;
 }
 
-.card:hover .card-inner {
-  transform: rotateY( 180deg ) ;
-  transition: transform 0.5s;
-}
-
-.flashcard_front, .flashcard_back {
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   background: white;
-   line-height: 300px;
-   color: #03446A;
-   text-align: center;
-   font-size: 60px;
-   border-radius: 5px;
-   backface-visibility: hidden;
-}
-
-.flashcard_back {
-  background-color: light-blue;
-  transform: rotateY(180deg);
-}
-
-.cardHeading, .deckHeading {
-  align-items: flex-start;
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
-
-.cardCount {
-  align-items: flex-start;
-  display: flex;
-  justify-content: center;
-  margin-top: 0.8em;
+.btn:hover {
+  background-color: #057191;
+  border-color: #057191;
 }
 
 .deck-container {
@@ -76,12 +65,14 @@ a:hover {
   border-collapse: separate;
   border-radius: 10px;
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
+
   height: 4rem;
   margin: 30px auto;
 }
 
 .deck-edit {
   align-self: flex-end;
+  // color: #DB755C;
   display: flex;
   font-size: 1.3rem;
   justify-content: space-around;
@@ -89,60 +80,54 @@ a:hover {
   position: relative;
 }
 
+.deckHeading {
+ align-items: flex-start;
+ display: flex;
+ justify-content: center;
+ margin-top: 2em;
+ padding-top: 1em;
+}
+
 .deck-item {
   align-items: center;
   align-self: flex-start;
+  color: #057191;
   flex-direction: vertical;
 }
 
+.deck-item a {
+color: #057191;
+}
+
 .deck-name{
-  // align-content: center;
+  // align-content: center
   display: flex;
   justify-content: space-between;
   margin: 10px;
 }
 
-.flashcard {
-  display: flex;
-  justify-content: center;
-  margin: 1em;
-}
-
-.footer-bar {
-  align-items: flex-end;
-  bottom: 0;
-  display: flex;
-  font-size: 1.2rem;
-  height: 2.5rem;
-  justify-content: space-evenly;
-  margin-top: 6em;
-  width: 100%;
-}
-
-.add-card, .edit-card, .go-home {
+.form-wrapper {
   align-items: center;
+  background-color: fefefe;
+  border-radius: 6px;
+  box-shadow: 0 8px 36px 222;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  min-height: 400px;
+  min-width: 100px;
+  padding: 20px 40px;
+  width: 280px;
 }
 
-.shuffle {
-  background: #ffffff;
-  border: none;
-  color: #007bff;
-  display: absolute;
-  font-size: 3em;
-  outline: none;
+.form-wrapper h3, .form-wrapper2 h3 {
+  padding: 20px;
 }
 
-.shuffle:hover {
-    background: #ffffff;
-    border: none;
-    color: #17a2b8;
-}
-
-.shuffle:active {
-  outline: none;
-  color: #007bff;
+.navigation {
+  background-color: #DB755C;
+  color: #ffffff;
 }
 
 .welcome {

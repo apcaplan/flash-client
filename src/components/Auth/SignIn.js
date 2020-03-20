@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import './auth.css'
+import { withRouter, Link } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from './AutoDismissAlert/messages'
@@ -33,7 +34,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/welcome'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
@@ -49,23 +50,25 @@ class SignIn extends Component {
 
     return (
       <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+        <div className="form-wrapper">
           <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
+          <Form className='signIn-form' onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+            <Form.Label>Email address</Form.Label>
               <Form.Control
+                className='auth-input'
                 required
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Email address"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+            <Form.Label>Password</Form.Label>
               <Form.Control
+                className='auth-input'
                 required
                 name="password"
                 value={password}
@@ -75,12 +78,14 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
+              className='button-auth'
               variant="primary"
               type="submit"
             >
               Submit
             </Button>
           </Form>
+          <p>No account? Sign up <Link style={{ color: '#007BFF' }} to="/sign-up">here</Link>!</p>
         </div>
       </div>
     )
