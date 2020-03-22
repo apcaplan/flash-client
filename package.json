@@ -23,14 +23,11 @@
     "url-loader": "0.6.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "make-standard": "eslint --fix ./src;exit 0",
-    "nag": "eslint ./src;exit 0",
-    "deploy": "sh scripts/deploy.sh"
+    "nag": "eslint ./src;exit 0"
   },
   "jest": {
     "collectCoverageFrom": [
