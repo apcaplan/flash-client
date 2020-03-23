@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './decks.css'
 // import { destroyDeck } from '../../api/decks'
 // import messages from '../Auth/AutoDismissAlert/messages'
 import Modal from 'react-bootstrap/Modal'
