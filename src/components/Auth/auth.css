@@ -3,6 +3,11 @@
   border-bottom: 3px solid green;
 } */
 
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  padding: 20px;
+}
+
 .button-auth {
   /* border-radius: 20px; */
   justify-content: center;
@@ -68,14 +73,8 @@
   /* width: 350px; */
 }
 
-.form-wrapper2 h3 {
+.form-wrapper2-cp h3 {
   margin-bottom: 1em;
-  padding: 20px;
-}
-
-.form-wrapper h3, .form-wrapper2 h3 {
-  font-family: 'Quicksand', sans-serif;
-  padding: 20px;
 }
 
 .password {

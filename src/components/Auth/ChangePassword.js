@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './auth.css'
+// import './auth.css'
 import { withRouter } from 'react-router-dom'
 
 import { changePassword } from '../../api/auth'

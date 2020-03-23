@@ -106,7 +106,7 @@ render () {
           <h3>Edit Deck</h3>
           <Form>
             <Form.Group controlId='newDeckName'>
-              <Form.Label>Change deck name from {oldDeckName} to:</Form.Label>
+              <Form.Label>Change deck name from {oldDeckName}:</Form.Label>
               <Form.Control
                 className='deck-new'
                 // required
