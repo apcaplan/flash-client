@@ -78,18 +78,6 @@ render () {
               >
                 Add Deck
               </Button>
-
-        {/*
-              <Button
-                className='cancel-button'
-                variant='secondary'
-                type='button'
-                onClick={this.cancel}
-              >
-                Cancel
-              </Button>
-            */}
-
           </Form>
         </div>
       </div>

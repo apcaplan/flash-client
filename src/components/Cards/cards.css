@@ -7,7 +7,7 @@
 }
 
 .button-delete {
-  background-color: #dc3545;
+  background-color: #dc3545 !important;
   color: rgba(255,255,255,0.9);
   margin-top: 10px;
 }
@@ -198,7 +198,7 @@
   border: none !important;
   color: #DB755C !important;
   display: absolute;
-  font-size: 3em;
+  font-size: 3em !important;
 }
 
 .shuffle.btn {
@@ -217,7 +217,7 @@
 }
 
 .shuffle:hover {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5 !important;
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
 
   border: none !important;

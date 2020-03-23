@@ -53,7 +53,7 @@ class ChangePassword extends Component {
       <div className='wrapper welcome'>
       { backHomeIcon() }
         <div className="change-pw row">
-          <div className="form-wrapper2">
+          <div className="form-wrapper2-cp">
             <h3>Change Password</h3>
             <Form onSubmit={this.onChangePassword}>
               <Form.Group controlId="oldPassword">
