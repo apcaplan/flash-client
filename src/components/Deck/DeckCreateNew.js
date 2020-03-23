@@ -53,7 +53,7 @@ render () {
   const { newDeckName } = this.state
 
   return(
-    <div className='wrapper welcome'>
+    <div className='wrapper'>
       { backHomeIcon() }
       <div className='deck-form row'>
         <div className='form-wrapper2'>

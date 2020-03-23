@@ -8,6 +8,13 @@
 
 .button-delete {
   background-color: #dc3545;
+  color: rgba(255,255,255,0.9);
+  margin-top: 10px;
+}
+
+.button-delete2 {
+  background-color: #dc3545;
+  color: rgba(255,255,255,0.9);
 }
 
 .button-edit2 {
@@ -25,6 +32,7 @@
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
   border: none;
   display: flex;
+
   margin: 1em 2em;
   position: relative;
   // position: absolute;
@@ -37,6 +45,7 @@
 .cardCount {
   align-items: flex-start;
   display: flex;
+  font-family: 'Quicksand', sans-serif;
   justify-content: center;
   margin-top: 0.8em;
 }
@@ -44,9 +53,10 @@
 .cardHeading {
   align-items: flex-start;
   display: flex;
+  font-family: 'Quicksand', sans-serif;
   justify-content: center;
-  margin-top: 2em;
-  padding-top: 1em;
+  /* margin-top: 2em; */
+  padding-top: 1.5em;
 }
 
 .card-edit, .card-input {
@@ -91,6 +101,10 @@
   margin: 2rem;
 }
 
+.delete-button {
+  color: rgba(255,255,255,0.9);
+}
+
 .first-card {
   color: #DB755C;
   display: flex;
@@ -104,8 +118,10 @@
 
 .flashcard {
   display: flex;
+
   justify-content: center;
   margin: 1em;
+  padding-top: 2em;
 }
 
 .flashcard_back {
@@ -133,10 +149,13 @@
   align-items: flex-end;
   bottom: 0;
   display: flex;
-  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
   height: 2.5rem;
   justify-content: space-evenly;
+  margin-bottom: 0;
   margin-top: 6em;
+  position: relative;
   width: 100%;
 }
 
@@ -156,6 +175,7 @@
 }
 
 .form-wrapper3 h3 {
+  font-family: 'Quicksand', sans-serif;
   margin-bottom: 1em;
   padding: 20px;
 }
@@ -167,7 +187,7 @@
 }
 
 .onNoCard {
-  height: 100vh;
+  height: 90vh;
   margin-top: 2em;
 }
 
@@ -208,7 +228,10 @@
   line-height: 1.5;
 }
 
+.text span {
+  font-family: 'Imprima', sans-serif;
+}
+
 .wrapper{
-  height: 100vh;
-  margin-top: 2em;
+  height: 80vh;
 }

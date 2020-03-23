@@ -56,7 +56,7 @@ class Welcome extends Component {
           </Container>
         )
       }) : (
-      <div className='center'>Click add button below to create a deck!</div>
+      <div className='center'>Click add button below to create one!</div>
       )
 
     if (error) {
@@ -64,7 +64,9 @@ class Welcome extends Component {
     }
 
     const heading = () => {
-      if (this.state.decks.length === 1) {
+      if (this.state.decks.length === 0) {
+        return (<h1 className='deckHeading'>You don't have any flashcard decks yet.</h1> )
+      } else if (this.state.decks.length === 1) {
         return (<h1 className='deckHeading'>Your Flashcard Deck</h1> )
       } else {
         return (<h1 className='deckHeading'>Your Flashcard Decks</h1> )

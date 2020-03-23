@@ -36,7 +36,7 @@ class DeckDeleteModal extends Component {
           Cancel
           </Button>
           <Button
-            className='button-delete'
+            className='button-delete2'
             variant='danger'
             type='button'
             onClick={deleteDeck}

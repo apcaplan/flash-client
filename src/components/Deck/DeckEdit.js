@@ -106,7 +106,7 @@ render () {
           <h3>Edit Deck</h3>
           <Form>
             <Form.Group controlId='newDeckName'>
-              <Form.Label>Change deck name from {oldDeckName}:</Form.Label>
+              <Form.Label>Change deck name from {oldDeckName} to:</Form.Label>
               <Form.Control
                 className='deck-new'
                 // required
@@ -118,9 +118,8 @@ render () {
               />
               </Form.Group>
           </Form>
-          <div className='buttons'>
             <Button
-              className='button-edit2'
+              className='button-edit3'
               variant='primary'
               type='submit'
               onClick={this.onEditDeck}
@@ -128,14 +127,14 @@ render () {
               Save Changes
             </Button>
             <Button
-              className='button-edit2 button-delete'
+              className='button-delete'
               variant='danger'
               type='button'
               onClick={this.onShowModalDeckDelete}
             >
               Delete Deck
             </Button>
-          </div>
+
         </div>
       </div>
 

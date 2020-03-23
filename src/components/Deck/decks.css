@@ -4,6 +4,13 @@
 
 .button-delete {
   background-color: #dc3545;
+  color: rgba(255,255,255,0.9);
+  margin-top: 10px;
+}
+
+.button-delete2 {
+  background-color: #dc3545;
+  color: rgba(255,255,255,0.9);
 }
 
 .button-edit{
@@ -14,6 +21,11 @@ margin-left: 45px;
 /* .button-edit2 {
   margin: 10px;
 } */
+
+.button-edit3 {
+  margin: 20px;
+  margin-top: 10px;
+}
 
 .deck-input {
   border: none;
@@ -29,6 +41,11 @@ margin-left: 45px;
 .deck-new {
   border: none;
   border-bottom: 3px solid #057191;
+  margin-bottom: 30px;
+}
+
+.delete-button {
+  color: rgba(255,255,255,0.9);
 }
 
 .form-wrapper2 {
@@ -43,10 +60,11 @@ margin-left: 45px;
   min-height: 400px;
   min-width: 100px;
   padding: 20px 40px;
-  width: 350px;
+  /* width: 350px; */
 }
 
 .form-wrapper2 h3 {
+  font-family: 'Quicksand', sans-serif;
   padding: 20px;
 }
 
@@ -57,6 +75,5 @@ margin-left: 45px;
 }
 
 .wrapper{
-  height: 100vh;
-  margin-top: 2em;
+  height: 80vh;
 }

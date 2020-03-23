@@ -1,9 +1,10 @@
 
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import AuthenticatedRoute from '../Auth/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../Auth/AutoDismissAlert/AutoDismissAlert'
+import Landing from '../Landing'
 import Header from '../Header/Header'
 import SignUp from '../Auth/SignUp'
 import SignIn from '../Auth/SignIn'
@@ -52,6 +53,10 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route path='/home' render={() => (
+            <Landing/>
+          )} />
+          <Redirect exact path from='/' to='/home' />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
