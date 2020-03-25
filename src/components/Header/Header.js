@@ -27,11 +27,11 @@ const Header = ({ user }) => (
     <Navbar.Brand>
       Flash!
     </Navbar.Brand>
+    <Nav className="nav-user">
+      { user && <span className="navbar-text">Welcome, {user.email}!</span>}
+    </Nav>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="nav-user">
-        { user && <span className="navbar-text">Welcome, {user.email}!</span>}
-      </Nav>
       <Nav className="ml-auto">
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>

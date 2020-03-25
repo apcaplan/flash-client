@@ -10,6 +10,10 @@ a {
   // color: #DB755C;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   background-color: #057191;
   color: #33363b;
@@ -165,13 +169,13 @@ color: #057191;
 }
 
 .landing h2 {
-  padding-top: 1em;
-  padding-left: 1em;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 .landing h2, .landing p {
   font-family: 'Imprima', sans-serif;
-  font-size: 3em;
+  font-size: 3rem;
   position: relative;
 }
 
@@ -211,8 +215,96 @@ color: #057191;
   height: 90vh;
 }
 
-@media (max-width: 540px) {
+
+
+@media screen and (max-width: 768px) {
+  .landing h1 {
+    font-size: 9rem;
+    margin-left: 6rem;
+  }
+
+  .landing h2, .landing p {
+    font-size: 2.3rem;
+  }
+
+  .landing p {
+    margin-bottom: 4rem;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .container {
+    // align-items: center;
+    // display: flex;
+    // margin-top: 0;
+    // top: 0;
+    // height: 85vh;
+
+    width: 80%;
+  }
+
+
+  .landing h1 {
+
+    font-size: 7.5rem;
+    margin-left: 4rem;
+    transform: rotate(-28deg) translate(50px, -20px);
+  }
+
+  .landing h2, .landing p {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .landing p {
+    margin-bottom: 6rem;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+
   body {
     width: 100%;
+  }
+
+  .article{
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    // height: 75vh;
+    width: 80%;
+  }
+
+  .landing {
+    height: 390px;
+  }
+
+  .landing h1 {
+    font-size: 5.4rem;
+    transform: rotate(-28deg) translate(90px, -90px);
+  }
+
+  .landing h2 {
+    padding-top: 0;
+  }
+
+  .landing h2, .landing p {
+    font-size: 1.5rem;
+
+  }
+
+  .navigation {
+    width: 100%;
+  }
+
+  .tagline {
+    margin-bottom: 0;
   }
 }

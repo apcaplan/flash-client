@@ -73,3 +73,62 @@ margin-left: 45px;
 .wrapper{
   height: 80vh;
 }
+
+@media screen and (max-width: 576px) {
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .add-deck {
+    margin-top: 3rem;
+  }
+
+  .container {
+    display: block;
+    overflow: scroll;
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+
+  .deck-container {
+    height: auto;
+    overflow: auto;
+    width: 98%;
+    word-break: break-word;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  h3{
+    font-size: 1.3rem;
+  }
+
+  .add-deck {
+    font-size: 1rem;
+  }
+
+  .deckHeading {
+    font-size: 1.5rem;
+  }
+
+  .deck-name h2 {
+    font-size: 1.2rem;
+  }
+
+  .deck-edit {
+    font-size: 1.1rem;
+  }
+
+  .deckRename{
+    overflow: auto;
+    width: 200px;
+  }
+
+  .form-wrapper2 h3{
+    font-size: 1.1rem;
+  }
+
+}

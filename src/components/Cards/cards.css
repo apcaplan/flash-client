@@ -32,10 +32,8 @@
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png") !important;
   border: none !important;
   display: flex;
-
   margin: 1em 2em;
   position: relative;
-  // position: absolute;
   width: 500px;
   height: 300px;
   perspective: 300rem;
@@ -76,13 +74,13 @@
 }
 
 .card-inner {
-  // transition: all 1s ease-in-out;
+  /* // transition: all 1s ease-in-out;
   // position: absolute;
   // top: 0;
   // left: 0;
   // height: 100%;
   // width: 100%;
-  // backface-visibility: hidden;
+  // backface-visibility: hidden; */
   border-radius: 1rem;
   box-shadow: 0 2px 15px rgba(0,0,0,0.2);
   /* box-shadow: 10px 10px 15px rgba(0,0,0,0.3); */
@@ -90,7 +88,6 @@
   transform-style: preserve-3d;
   transition: transform 2s;
   height: 100%;
-  // height: auto;
   width: 100%;
 }
 
@@ -234,4 +231,44 @@
 
 .wrapper{
   height: 80vh;
+}
+
+@media screen and (max-width: 768px) {
+
+  .shuffle {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .flashcard {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .footer-bar p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .shuffle {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .footer-bar p {
+    font-size: 1rem;
+    overflow: auto;
+    text-align: center;
+    width: 70px;
+  }
 }

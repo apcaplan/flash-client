@@ -47,7 +47,7 @@ class Welcome extends Component {
                   <h2>{deck.deckName}</h2>
                 </Link>
               </Col>
-              <Col>
+              <Col className='deckEdit-icon'>
                 <Link className='deck-edit' to={`/decks/${deck._id}/edit-deck`}>
                   <FontAwesomeIcon icon='pencil-alt' />
                 </Link>

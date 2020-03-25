@@ -105,7 +105,7 @@ render () {
         <div className='form-wrapper2'>
           <h3>Edit Deck</h3>
           <Form>
-            <Form.Group controlId='newDeckName'>
+            <Form.Group className='deckRename' controlId='newDeckName'>
               <Form.Label>Change deck name from {oldDeckName}:</Form.Label>
               <Form.Control
                 className='deck-new'
