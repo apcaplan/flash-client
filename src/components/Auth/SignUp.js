@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './auth.css'
 import { withRouter, Link } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'

@@ -235,16 +235,18 @@ color: #057191;
 
 @media screen and (max-width: 576px) {
 
+  .article {
+      margin-bottom: 6rem;
+    }
+
   .container {
     // align-items: center;
     // display: flex;
     // margin-top: 0;
     // top: 0;
     // height: 85vh;
-
     width: 80%;
   }
-
 
   .landing h1 {
 
@@ -258,7 +260,7 @@ color: #057191;
     margin-top: 2rem;
   }
 
-  .landing p {
+  .tagline {
     margin-bottom: 6rem;
   }
 
@@ -288,7 +290,7 @@ color: #057191;
 
   .landing h1 {
     font-size: 5.4rem;
-    transform: rotate(-28deg) translate(90px, -90px);
+    transform: rotate(-28deg) translate(60px, -50px);
   }
 
   .landing h2 {

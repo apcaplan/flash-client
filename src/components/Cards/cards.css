@@ -265,6 +265,10 @@
 
 @media screen and (max-width: 420px) {
 
+  .button-edit2 {
+    margin-left: 20px;
+  }
+
   .footer-bar p {
     font-size: 1rem;
     overflow: auto;
