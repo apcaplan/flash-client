@@ -80,6 +80,7 @@ a:hover {
 
   height: 4rem;
   margin: 30px auto;
+  overflow: auto;
   padding: 0 25px;
 }
 
@@ -110,6 +111,7 @@ a:hover {
   align-self: flex-start;
   color: #057191;
   flex-direction: vertical;
+  // overflow: auto;
 }
 
 .deck-item a {
@@ -118,9 +120,12 @@ color: #057191;
 
 .deck-name{
   // align-content: center
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   margin: 10px;
+  overflow: auto;
+  word-wrap: break-word;
+
 }
 
 .form-wrapper {
